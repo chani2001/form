@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이동 중...</title>
+    <script>
+        // 여기에 실제 구글 폼 주소를 넣어주세요
+        var targetUrl = "https://forms.gle/VpJNggbNWZTre4Xy6"; 
+        
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.match(/android/i) && userAgent.match(/fban|fbav/i)) {
+            var intentUrl = "intent://" + targetUrl.replace(/https?:\/\//i, "") + "#Intent;scheme=https;package=com.android.chrome;end;";
+            location.href = intentUrl;
+        } else if (userAgent.match(/iphone|ipad|ipod/i) && userAgent.match(/fban|fbav/i)) {
+            document.write("<div style='text-align:center; margin-top:50px;'><h3>화면 오른쪽 아래의 🧭 아이콘을 눌러<br>Safari에서 열어주세요!</h3></div>");
+        } else {
+            location.href = targetUrl;
+        }
+    </script>
+</head>
+<body></body>
+</html>
